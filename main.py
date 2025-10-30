@@ -1,6 +1,8 @@
 import requests
 import json
 import os
+import time
+from datetime import datetime
 
 #store a url
 URL = "https://uselessfacts.jsph.pl/random.json?language=en"
@@ -27,5 +29,8 @@ def catch(url):
             print("Include:", data["text"])
     else:
         print(f"Error: {response.status_code}")
-for x in range(3):
+
+
+while True:
+    time.sleep(2)
     catch(URL)
